@@ -8,7 +8,7 @@ type Props = {}
 function AddItem({}: Props) {
     const address = useAddress()
     const router = useRouter()
-    const [preview, setPreview] = useState<String>()
+    const [preview, setPreview] = useState<string>()
     const [image, setImage] = useState<File>()
     const { contract} = useContract(
         process.env.NEXT_PUBLIC_COLLECTION_CONTRACT, "nft-collection"
