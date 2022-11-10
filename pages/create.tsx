@@ -103,6 +103,10 @@ function Create({}: Props) {
             <hr className='mb-5' />
             <p>Below you will find the NFT's you own in your wallet</p>
 
+            {address ? ('') : (
+            <p className='font-bold text-red-500/50 animate-pulse'>Connect your wallet to view your inventory!</p>
+            ) }
+
             <div className='flex overflow-x-scroll space-x-2'>
                 {ownedNfts?.data?.map(nft => (
                     <div key={nft.metadata.id}

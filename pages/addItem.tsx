@@ -59,10 +59,10 @@ function AddItem({}: Props) {
                 then list for sale!
             </p>
 
-            <div className='flex flex-col justify-center md:flex-row md:space-x-5 pt-5'>
+            {address ? (
+                <div className='flex flex-col justify-center md:flex-row md:space-x-5 pt-5'>
                 <img className='border h-80 w-80 object-contain' src={preview || "https://links.papareact.com/ucj"} alt="" />
-
-            <form onSubmit={mintNft} className='flex flex-col flex-1 p-2 space-y-2'>
+                <form onSubmit={mintNft} className='flex flex-col flex-1 p-2 space-y-2'>
                 <label className='font-light'>Name of Item</label>
                 <input className='formField' type="text" placeholder='Name of Item...' name='name' id='name' />
 
@@ -80,6 +80,9 @@ function AddItem({}: Props) {
                 <button type='submit' className='bg-blue-600 font-bold text-white rounded-full py-4 px-10 w-56 md:mt-auto mx-auto md:ml-auto'>Add/Mint Item</button>
             </form>
             </div>
+            ) : (
+            <p className='font-bold text-red-500/50 text-center animate-pulse'>Connect your wallet so you can add inventory!</p>
+            ) }
         </main>
     </div>
   )
